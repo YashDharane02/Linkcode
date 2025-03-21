@@ -1,24 +1,50 @@
-//Arrays functions
-//1. Slice Method:- does not change the arrays
+// JavaScript Array Functions
+// Arrays in JavaScript have built-in methods for transformation, filtering, and modification.
 
-let arr = ["a", "b", "c", "d", "e"];
-console.log(arr.slice(2));
+// 1. Slice Method - Extracts a portion of an array without modifying the original array.
+let fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes"];
+console.log(fruits.slice(1));     // ["Banana", "Mango", "Orange", "Grapes"]
+console.log(fruits.slice(1, 3));  // ["Banana", "Mango"]
+console.log(fruits);              // Original array remains unchanged
 
-console.log(arr.slice(2, 4));
+// 2. Splice Method - Removes or replaces elements and modifies the original array.
+let colors = ["Red", "Blue", "Green", "Yellow", "Purple"];
+console.log(colors.splice(1, 2));  // Removes "Blue" and "Green"
+console.log(colors);  // ["Red", "Yellow", "Purple"]
 
-//2. Splice Method:- same as slice but this method makes change in arrays also
+// 3. Map Function - Transforms each array element using a callback function.
+let numbers = [10, 20, 30, 40, 50];
+const squaredNumbers = numbers.map((num) => num * num);
+console.log(squaredNumbers); // [100, 400, 900, 1600, 2500]
+console.log(numbers); // Original array remains unchanged
 
-console.log(arr.splice(2));
+// 4. Filter Function - Filters elements based on a condition.
+let ages = [12, 18, 25, 30, 15, 40, 22];
+const adults = ages.filter((age) => age >= 18);
+console.log(adults); // [18, 25, 30, 40, 22]
 
-//3. Map functions:-  this function is used to transform arrays
-//it takes callback functions as a parameter
+// 5. Reduce Function - Accumulates values in an array into a single value.
+let prices = [100, 200, 300, 400];
+const totalPrice = prices.reduce((acc, price) => acc + price, 0);
+console.log(totalPrice); // 1000
 
-let arrays = [1, 2, 3, 4, 5];
-const doubledNumbers = arrays.map((num) => num * 2);
-console.log(doubledNumbers);
-console.log(arrays);
+// 6. Find Function - Finds the first element that satisfies the condition.
+let scores = [45, 50, 60, 70, 85];
+const firstHighScore = scores.find((score) => score > 60);
+console.log(firstHighScore); // 70
 
-//4.filter:- this function is used to filter out elements from array based on condition
-arrays = [1, 2, 3, 4, 5, 8, 10, 12, 16, 17];
-const evenNumbers = arrays.filter((num) => num % 2 === 0);
-console.log(evenNumbers);
+// 7. Some Function - Checks if at least one element meets the condition.
+let temperatures = [15, 22, 18, 35, 40];
+const hasHighTemp = temperatures.some((temp) => temp > 30);
+console.log(hasHighTemp); // true
+
+// 8. Every Function - Checks if all elements meet the condition.
+const allPositive = numbers.every((num) => num > 0);
+console.log(allPositive); // true
+
+// 9. Sort Function - Sorts elements in ascending order.
+let names = ["Yash", "Tanaji", "Dharane", "Amit", "Raj"];
+console.log(names.sort()); // ["Amit", "Dharane", "Raj", "Tanaji", "Yash"]
+
+// 10. Reverse Function - Reverses the order of array elements.
+console.log(names.reverse()); // ["Yash", "Tanaji", "Raj", "Dharane", "Amit"]
