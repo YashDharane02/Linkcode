@@ -1,14 +1,16 @@
-function greet(name, callback) {
-  console.log(`Hello,${name}!`);
+function displayMessage(name, callback) {
+  console.log(`Welcome, ${name}!`);
   callback();
 }
 
-function farewell() {
-  console.log("GoodBye!");
+function showCompletionMessage() {
+  console.log("Your registration is successful.");
 }
 
-greet("Anup", farewell);
+// Passing a named function as a callback
+displayMessage("Yash", showCompletionMessage);
 
-greet("Anup", () => {
-  console.log("Arrow functions");
+// Passing an anonymous function as a callback
+displayMessage("Tanaji", () => {
+  console.log("Processing your request...");
 });
